@@ -14,10 +14,10 @@
 </head>
 <body>
     <section class="wrapperChat">
-        <?php require_once "conversas.html"; ?>
+        <?php require_once "partials/conversas.html"; ?>
     </section>
     <section class="wrapperChat">
-        <?php require_once "chatArea.html"; ?>
+        <?php require_once "partials/chatArea.html"; ?>
     </section>
 </body>
 </html>
