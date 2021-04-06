@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../src/css/chat.css">
 </head>
 <body>
-    <section class="wrapperChat">
+    <section class="wrapperConversas">
         <?php require_once "partials/conversas.html"; ?>
     </section>
     <section class="wrapperChat">

@@ -12,12 +12,12 @@ body {
 	flex-flow: row;
 }
 .wrapperConversas {
-	flex: 0 1 auto;
+	flex: 30%;
     background: #2c2f33;
     height: 100vh;
 }
 .wrapperChat {
-	flex: 1 1 auto;
+	flex: 70%;
     background: #2c2f33;
     height: 100vh;
 }
