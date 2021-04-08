@@ -1,0 +1,42 @@
+<section class="form signup">
+    <header>Chat Web</header>
+    <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+      <div class="error-text"></div>
+      <div class="name-details">
+            <div class="field input">
+              <label>Nome</label>
+              <input type="text" name="nome" placeholder="Nome" required>
+            </div>
+            <div class="field input">
+              <label>Sobrenome</label>
+              <input type="text" name="sobrenome" placeholder="Sobrenome" required>
+            </div>
+      </div>
+      <div class="field input">
+        <label>Nome de usuario</label>
+        <input type="text" name="nomeUsuario" placeholder="Nome de usuario" required>
+      </div>
+      <div class="field input">
+        <label>E-mail</label>
+        <input type="text" name="email" placeholder="E-mail" required>
+      </div>
+      <div class="field input">
+        <label>Senha</label>
+        <input type="password" name="senha" placeholder="Senha" required>
+      </div>
+      <div class="field image">
+        <label>Escolha sua foto de perfil</label>
+        <div>
+          <img id="output" src="#" alt="your image" />
+          <label for="selecao-arquivo" id="input">Selecionar um arquivo</label>
+          <input id="selecao-arquivo" type="file" name="foto" accept="image/x-png,image/gif,image/jpeg,image/jpg" placeholder="Escolha a sua foto de perfil" required>
+        </div>
+      </div>
+      <div class="field button">
+        <input type="submit" name="submit" value="Continue to Chat">
+      </div>
+    </form>
+    <div class="link">Já tem um login? <a href="#">Login</a></div>
+</section>
+
+<script src="../src/js/registrar.js"></script>
