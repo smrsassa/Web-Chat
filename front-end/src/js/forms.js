@@ -1,15 +1,16 @@
 const elemWrapper = document.getElementById('wrapper');
 const url = window.location.href;
+const urlLenghtDefalt = 25;
 
-const getLastItem = thePath => thePath.substring( thePath.lastIndexOf('/') + 1 );
-const formToLoad = getLastItem(url);
+const getLastItem = thePath => thePath.substring( thePath.indexOf('/', urlLenghtDefalt) + 1 );
+const formToLoad = getLastItem( url );
 
 switch( formToLoad ) {
-    case 'login':
-        elemWrapper.innerHTML = loadPage('partials/fromLogin.html');
+    case 'login/':
+        elemWrapper.innerHTML = loadPage('../front-end/pages/partials/fromLogin.html');
         break;
-    case 'registro':
-        elemWrapper.innerHTML = loadPage('partials/fromRegistrar.html');
+    case 'registro/':
+        elemWrapper.innerHTML = loadPage('../front-end/pages/partials/fromRegistrar.html');
         break;
 }
 
