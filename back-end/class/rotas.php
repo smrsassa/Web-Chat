@@ -5,6 +5,7 @@ class Route{
 	private static $routes = Array();
 	private static $pathNotFound = null;
 	private static $methodNotAllowed = null;
+	public static $pagesPath = '../front-end/pages/';
 
 	public static function add($expression, $function, $method = 'get') {
 	  	array_push(self::$routes,Array(
@@ -61,7 +62,7 @@ class Route{
 	    	    	  	array_shift($matches);
 	    	    	}
 
-	    	    	call_user_func_array($route['function'], $matches);
+	    	    	require_once self::$pagesPath . (call_user_func_array($route['function'], $matches));
 
 	    	    	$route_match_found = true;
 
