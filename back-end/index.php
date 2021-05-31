@@ -1,19 +1,38 @@
 <?php
 
-include('class/rotas.php');
+include __DIR__ . '\vendor\autoload.php';
+include __DIR__ . '\class\route.php';
 
-// Essa rota acontece, pois trabalhando com xampp minhas aplicações ficam em um subdiretório
+
+$loader = new \Twig\Loader\FilesystemLoader( dirname(__DIR__).'/front-end/pages/');
+$twig = new \Twig\Environment($loader);
+
 Route::add('/web-chat/login/',function() {
-    return 'formPage.html';
+    global $twig;
+
+    echo $twig->render('formPage.html', [
+        "formulario" => "partials/formLogin.html"
+    ]);
 });
 
 Route::add('/web-chat/registro/',function() {
-    return 'formPage.html';
+    global $twig;
+
+    echo $twig->render('formPage.html', [
+        "formulario" => "partials/formRegistrar.html"
+    ]);
 });
 
 Route::add('/web-chat/',function() {
-    return 'index.html';
+    global $twig;
+
+    echo $twig->render('index.html', [
+        "conteudoConversas" => "partials/conversas.html",
+        "conteudoChat" => "partials/chatArea.html"
+    ]);
 });
 
-Route::run();
+call_user_func(
+    Route::run()
+);
 

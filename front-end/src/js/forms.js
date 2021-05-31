@@ -1,19 +1,3 @@
-const elemWrapper = document.getElementById('wrapper');
-const url = window.location.href;
-const urlLenghtDefalt = 25;
-
-const getLastItem = thePath => thePath.substring( thePath.indexOf('/', urlLenghtDefalt) + 1 );
-const formToLoad = getLastItem( url );
-
-switch( formToLoad ) {
-    case 'login/':
-        elemWrapper.innerHTML = loadPage('../front-end/pages/partials/fromLogin.html');
-        break;
-    case 'registro/':
-        elemWrapper.innerHTML = loadPage('../front-end/pages/partials/fromRegistrar.html');
-        break;
-}
-
 // Preview para upload de imagem
 const elemSelecaoArquivo = document.getElementById("selecao-arquivo");
 
