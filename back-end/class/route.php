@@ -3,6 +3,7 @@
 class Route{
 
     private static $routes = Array();
+	private static $errorRoutes;
 	public static $pagesPath = '../view/pages/';
 
 	public static function add($expression, $function, $method = 'get') {
@@ -12,6 +13,10 @@ class Route{
 	  	  	'method' => $method
 	  	));
 	}
+
+	public static function addRoute404( $function ) {
+		self::$errorRoutes = $function;
+  	}
 
     public static function run() {
         
@@ -42,7 +47,7 @@ class Route{
 		}
 
 		if( !$route_match_found ) {
-			header("HTTP/1.0 404 Not Found");
+			return self::$errorRoutes;
 	  	}
     }
 

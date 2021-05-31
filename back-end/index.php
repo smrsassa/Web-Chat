@@ -32,6 +32,12 @@ Route::add('/web-chat/',function() {
     ]);
 });
 
+Route::addRoute404(function() {
+    global $twig;
+
+    echo $twig->render('error/404.html');
+});
+
 call_user_func(
     Route::run()
 );
