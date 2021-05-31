@@ -23,7 +23,7 @@ class usuario extends database
             $_SESSION['sobrenome'] = $userInfo['sobrenome'];
             $_SESSION['email'] = $userInfo['email'];
             $_SESSION['status'] = $userInfo['status'];
-            $_SESSION['logado'] = true;
+
             if (isset($cookies)) {
                 $expire = time() + 60 * 60 * 24 * 30;
                 setcookie("nome", $nome, $expire);

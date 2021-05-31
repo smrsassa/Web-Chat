@@ -7,6 +7,17 @@ include __DIR__ . '\class\route.php';
 $loader = new \Twig\Loader\FilesystemLoader( dirname(__DIR__).'/front-end/pages/');
 $twig = new \Twig\Environment($loader);
 
+function verificaLogin() {
+    global $twig;
+
+    session_start();
+    if ( !isset($_SESSION['id']) )
+    {
+        header("location: login/");
+        exit;
+    }
+}
+
 Route::add('/web-chat/login/',function() {
     global $twig;
 
@@ -25,6 +36,8 @@ Route::add('/web-chat/registro/',function() {
 
 Route::add('/web-chat/',function() {
     global $twig;
+
+    verificaLogin();
 
     echo $twig->render('index.html', [
         "conteudoConversas" => "partials/conversas.html",

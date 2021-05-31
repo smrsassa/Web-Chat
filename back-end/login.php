@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/class/usuario.php';
 
+
 try {
 
     $nome = $_GET['nome'];
