@@ -36,6 +36,27 @@ class usuario extends database
         return false;
     }
 
+    public function registro(String $nome, String $sobrenome, String $nomeUnico, String $email, String $senha, String $imgData)
+    {
+        $sql = "INSERT INTO `usuarios`(`nomeUnico`, `nome`, `sobrenome`, `email`, `senha`, `foto`)
+                VALUES (:nomeUnico, :nome, :sobrenome, :email, :senha, :foto)";
+
+        $stmt = $this->con->prepare($sql);
+
+        $stmt->bindParam(':nomeUnico', $nome);
+        $stmt->bindParam(':nome', $sobrenome);
+        $stmt->bindParam(':sobrenome', $nomeUnico);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':senha', $senha);
+        $stmt->bindParam(':foto', $imgData, PDO::PARAM_LOB);
+
+        if ( $stmt->execute() ) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function procuraNomeSenha( String $nome, String $senha )
     {
         $querySearchUser = "SELECT * FROM usuarios WHERE nomeUnico = '$nome' AND senha = '$senha'";
