@@ -1,17 +1,17 @@
-DirectoryIndex back-end/index.php
+DirectoryIndex index.php
 
 # Habilitar o motor de reescrita do Apache
 RewriteEngine on
 
 # Definir sua base de reescrita
-RewriteBase /web-chat/
+RewriteBase /phpwebchat/public/
 
 # Entregue a pasta ou arquivo diretamente se existir no servidor
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
  
 # Envie todas as solicitações para index.php
-RewriteRule ^(.*)$ back-end/index.php [QSA]
+RewriteRule ^(.*)$ index.php [QSA]
 
 # Adiciona uma / no final da url *para diretorios*
 RewriteCond %{REQUEST_URI} /+[^\.]+$ 

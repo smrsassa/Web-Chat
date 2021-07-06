@@ -1,7 +1,7 @@
 <?php
 
-class Route{
-
+class Route
+{
     private static $routes = Array();
 	private static $errorRoutes;
 	public static $pagesPath = '../view/pages/';

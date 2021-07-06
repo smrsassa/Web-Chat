@@ -12,7 +12,7 @@ class usuario extends database
     public function login( String $nome, String $senha )
     {
         $userInfo = $this->procuraNomeSenha($nome, $senha);
-    
+
         if ( $userInfo ) {
             $this->updateUserLog($userInfo['id'], 1);
 
@@ -29,7 +29,11 @@ class usuario extends database
                 setcookie("nome", $nome, $expire);
                 setcookie("senha", $senha, $expire);
             }
+
+            return true;
         }
+        
+        return false;
     }
 
     public function procuraNomeSenha( String $nome, String $senha )
