@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/class/usuario.php';
+require_once __DIR__ . '/core/usuario.php';
 
 $userClass = new usuario();
 
@@ -10,4 +10,4 @@ $userClass->updateUserLog($_SESSION['id']);
 
 session_destroy();
 
-header("location: ../");
+header("location: http://localhost/phpwebchat/public/");

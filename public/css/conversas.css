@@ -34,10 +34,38 @@
     font-weight: 500;
 }
 .users header .options{
-    display: block;
+    display: flex;
     color: #ffffff;
     padding: 7px 15px;
     font-size: 22px;
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.users header .options .optionsDropdown {
+    display: none;
+    position: absolute;
+    width: 150px;
+    background-color: #45484d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 5px 0px 5px 0px;
+    list-style: none;
+    z-index: 999;
+    top: 100%;
+}
+.users header .options .optionsDropdown li {
+    font-size: 18px;
+    padding: 8px 10px 8px 10px;
+    transition: 1s;
+}
+.users header .options .optionsDropdown li:hover {
+    background-color: #23272a;
+}
+.users header .options .optionsDropdown li a {
+    color: #ffffff;
+}
+.users header .options:hover {
+    background-color: #23272a;
 }
 .users .search{
     flex: 0 1 auto;
