@@ -1,13 +1,15 @@
 <?php
 
-require_once __DIR__ . '/core/usuario.php';
+include dirname(__DIR__) . '\vendor\autoload.php';
 
+
+use phpWebChat;
 
 try {
     $nome = $_POST['nome'];
     $senha = $_POST['senha'];
 
-    $usuario = new usuario();
+    $usuario = new phpWebChat\Usuario();
 
     if ( $usuario->login($nome, $senha) )
     {

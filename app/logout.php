@@ -1,8 +1,9 @@
 <?php
 
-require_once __DIR__ . '/core/usuario.php';
+include dirname(__DIR__) . '\vendor\autoload.php';
 
-$userClass = new usuario();
+
+$userClass = new phpWebChat\Usuario();
 
 session_start();
 

@@ -1,8 +1,8 @@
 <?php
 
 include dirname(__DIR__) . '\vendor\autoload.php';
-include dirname(__DIR__) . '\app\core\route.php';
 
+use phpWebChat\Route;
 
 $loader = new \Twig\Loader\FilesystemLoader( dirname(__DIR__) . '/app/views/' );
 $twig = new \Twig\Environment($loader);

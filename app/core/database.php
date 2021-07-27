@@ -1,6 +1,10 @@
 <?php
 
-class database
+namespace phpWebChat;
+
+use PDO;
+
+class Database
 {
     private const HOST = '127.0.0.1';
     private const DB = 'webchat';

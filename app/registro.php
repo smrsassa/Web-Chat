@@ -1,7 +1,9 @@
 <?php
 
-require_once __DIR__ . '/core/usuario.php';
+include dirname(__DIR__) . '\vendor\autoload.php';
 
+
+use phpWebChat\Validacao;
 
 try {
     $nome = $_POST['nome'];
@@ -14,18 +16,24 @@ try {
     $imgType = $_FILES["image"]["type"];
 
     if ( (substr($imgType,0,5) == "image") == 1 ) {
-    
-        $usuario = new usuario();
+        
+        $userClass = new phpWebChat\Usuario();
 
-        if ( $usuario->registro($nome, $sobrenome, $nomeUnico, $email, $senha, $imgData) )
-        {
-            header("location: ../public/login/");
-        } else
-        {
+        if ( Validacao::email($email) ) {
+            if ( $userClass->registro($nome, $sobrenome, $nomeUnico, $email, $senha, $imgData) )
+            {
+                header("location: ../public/login/");
+            } else
+            {
+                header("location: ../public/registro/");
+            }
+        } else {
             header("location: ../public/registro/");
         }
+    } else {
+        header("location: ../public/registro/");
     }
 
 } catch (Exception $e) {
-    echo $e;
+    header("location: ../public/registro/");
 }

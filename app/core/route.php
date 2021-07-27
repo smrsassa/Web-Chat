@@ -1,5 +1,7 @@
 <?php
 
+namespace phpWebChat;
+
 class Route
 {
     private static $routes = Array();

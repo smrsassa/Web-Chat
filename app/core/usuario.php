@@ -1,8 +1,11 @@
 <?php
 
-require_once 'database.php';
+namespace phpWebChat;
 
-class usuario extends database
+use PDO;
+use phpWebChat\Database;
+
+class Usuario extends Database
 {
     function __construct()
     {
