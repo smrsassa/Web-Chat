@@ -1,3 +1,15 @@
+:root {
+    --black: #23272a;
+    --dark: #2c2f33;
+    --light-dark: #333;
+    --dark-gray: #45484d;
+    --gray: #57595e;
+    --red: #721c24;
+    --blue: #7289da;
+    --green: #468669;
+    --light-gray: #ccc;
+    --white: #ffffff;
+}
 *{
     margin: 0;
     padding: 0;
@@ -7,17 +19,17 @@
 }
 body {
     margin:0;
-    background: #2c2f33;
+    background: var(--dark);
     display: flex;
 	flex-flow: row;
 }
 .wrapperConversas {
 	flex: 30%;
-    background: #2c2f33;
+    background: var(--dark);
     height: 100vh;
 }
 .wrapperChat {
 	flex: 70%;
-    background: #2c2f33;
+    background: var(--dark);
     height: 100vh;
 }

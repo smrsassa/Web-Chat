@@ -12,7 +12,7 @@
 	display: flex;
 	align-items: center;
 	padding-bottom: 20px;
-	border-bottom: 1px solid #45484d;
+	border-bottom: 1px solid var(--dark-gray);
 	justify-content: space-between;
 }
 .users header img{
@@ -26,7 +26,7 @@
     align-items: center;
 }
 :is(.users, .users-list) .content .details{
-    color: #ffffff;
+    color: var(--white);
     margin-left: 20px;
 }
 :is(.users, .users-list) .details span{
@@ -35,7 +35,7 @@
 }
 .users header .options{
     display: flex;
-    color: #ffffff;
+    color: var(--white);
     padding: 7px 15px;
     font-size: 22px;
     position: relative;
@@ -46,7 +46,7 @@
     display: none;
     position: absolute;
     width: 150px;
-    background-color: #45484d;
+    background-color: var(--dark-gray);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 10px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 0px 5px 0px;
     list-style: none;
@@ -59,13 +59,13 @@
     transition: 1s;
 }
 .users header .options .optionsDropdown li:hover {
-    background-color: #23272a;
+    background-color: var(--black);
 }
 .users header .options .optionsDropdown li a {
-    color: #ffffff;
+    color: var(--white);
 }
 .users header .options:hover {
-    background-color: #23272a;
+    background-color: var(--black);
 }
 .users .search{
     flex: 0 1 auto;
@@ -74,13 +74,13 @@
     position: relative;
     align-items: center;
     justify-content: space-between;
-	background: #45484d;
+	background: var(--dark-gray);
 	border-radius: 4px;
 	padding-left: 10px;
 }
 .users .search .text{
     font-size: 18px;
-	color: #ffffff;
+	color: var(--white);
 }
 .users .search input{
     position: absolute;
@@ -88,7 +88,7 @@
     width: calc(100% - 50px);
     font-size: 16px;
     padding: 0 13px;
-    border: 1px solid #e6e6e6;
+    border: 1px solid var(--white);
     outline: none;
     border-radius: 5px 0 0 5px;
     opacity: 0;
@@ -107,15 +107,15 @@
     font-size: 17px;
     cursor: pointer;
     border: none;
-    background: #45484d;
-    color: #ffffff;
+    background: var(--dark-gray);
+    color: var(--white);
     outline: none;
     border-radius: 0 5px 5px 0;
     transition: all 0.2s ease;
 }
 .users .search button.active{
-    background: #333;
-    color: #fff;
+    background: var(--light-dark);
+    color: var(--white);
 }
 .search button.active i::before{
     content: '\f00d';
@@ -131,7 +131,7 @@
     padding-bottom: 10px;
     margin-bottom: 15px;
     padding-right: 15px;
-    border-bottom-color: #45484d;
+    border-bottom-color: var(--dark-gray);
 }
 .users-list a:last-child{
     margin-bottom: 0px;
@@ -148,9 +148,9 @@
 }
 .users-list a .status-dot{
     font-size: 12px;
-    color: #468669;
+    color: var(--green);
     padding-left: 10px;
 }
 .users-list a .status-dot.offline{
-    color: #ccc;
+    color: var(--light-gray);
 }

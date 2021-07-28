@@ -10,11 +10,11 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #23272a;
+    background: var(--black);
     padding: 0 10px;
 }
 .wrapper {
-    background: #2c2f33;
+    background: var(--dark);
     max-width: 450px;
     width: 100%;
     border-radius: 16px;
@@ -23,16 +23,16 @@ body {
     padding: 25px 30px;
 }
 h1 {
-    color: #fff;
+    color: var(--white);
 }
 hr {
     opacity: 0.1;
     margin: 12px 0px 12px 0px;
 }
 p {
-    color: white;
+    color: var(--white);
     margin: 12px 0px 12px 0px;
 }
 a {
-    color: #7289da;
+    color: var(--blue);
 }
