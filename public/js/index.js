@@ -1,12 +1,12 @@
-const options = document.querySelector(".options"),
-      optionsDropdown = document.querySelector(".optionsDropdown");
+const options = $(".options"),
+      optionsDropdown = $(".optionsDropdown")
 
 
-optionsDropdown.style.display = 'none';
+optionsDropdown.hide()
 
-options.onclick = () => {
-    if (optionsDropdown.style.display == 'none') {
-        return optionsDropdown.style.display = 'block';
+options.on("click", () => {
+    if ( optionsDropdown.is(":hidden") ) {
+        return optionsDropdown.show()
     }
-    optionsDropdown.style.display = 'none';
-}
+    optionsDropdown.hide()
+})

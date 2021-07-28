@@ -1,13 +1,13 @@
 // Preview para upload de imagem
-const elemSelecaoArquivo = document.getElementById("selecao-arquivo");
+const elemSelecaoArquivo = $("#selecao-arquivo")
 
-elemSelecaoArquivo.onchange = (event) => {
-    var output = document.getElementById("output");
+elemSelecaoArquivo.on("change", (event) => {
+    let output = $("#output")
 
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.style.display = "flex";
+    output.attr('src', URL.createObjectURL(event.target.files[0]))
+    output.css('display', 'flex');
 
-    output.onload = () => {
-        URL.revokeObjectURL(output.src);
-    }
-};
+    output.on("load", () => {
+        URL.revokeObjectURL(output.src)
+    })
+})
