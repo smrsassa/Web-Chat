@@ -11,12 +11,10 @@ try {
     $nomeUnico = $_POST['nomeUnico'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    
-    $imgData = file_get_contents($_FILES["image"]["tmp_name"]);
-    $imgType = $_FILES["image"]["type"];
 
-    if ( (substr($imgType,0,5) == "image") == 1 ) {
-        
+    $imgData = Validacao::imagem($_FILES["image"]);
+
+    if ( $imgData ) {
         $userClass = new phpWebChat\Usuario();
 
         if ( Validacao::email($email) ) {
