@@ -48,6 +48,12 @@ Route::add('/phpwebchat/public/', function() {
 
     echo $twig->render('index.html', [
         "userName" => $_SESSION['nomeUnico'],
+        "conversas" => [
+            [ "id" => 1, "nome" => "Samuel", "ultimaMsg" => "Oi" ],
+            [ "id" => 2, "nome" => "Mãe", "ultimaMsg" => "Aqui" ],
+            [ "id" => 3, "nome" => "Pai", "ultimaMsg" => "Olá" ],
+            [ "id" => 4, "nome" => "Sei lá", "ultimaMsg" => "???" ]
+        ]
     ]);
 });
 
@@ -55,6 +61,19 @@ Route::addRoute404(function() {
     global $twig;
 
     echo $twig->render('error/404.html');
+});
+
+Route::add('/phpwebchat/public/chat/', function() {
+    global $twig;
+
+    echo $twig->render('partials/chat.html', [
+        "userName" => "Cara Aleatório",
+        "status" => "Meu status",
+        "mensagens" => [
+            [ "destino" => "outgoing", "mensagem" => "asd" ],
+            [ "destino" => "incoming", "mensagem" => "asd" ],
+        ]
+    ]);
 });
 
 call_user_func(

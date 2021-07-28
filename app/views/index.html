@@ -39,16 +39,18 @@
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="users-list">
-                <a href="#">
-                    <div class="content">
-                        <img src="img/imgTeste.png" alt="">
-                        <div class="details">
-                            <span>Asymo Bot</span>
-                            <p>Oi, tb?</p>
+                {% for usuario in conversas %}
+                    <a href="#" class="conversa" id="{{ usuario.id }}">
+                        <div class="content">
+                            <img src="img/imgTeste.png" alt="">
+                            <div class="details">
+                                <span>{{ usuario.nome }}</span>
+                                <p>{{ usuario.ultimaMsg }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
+                        <div class="status-dot"><i class="fas fa-circle"></i></div>
+                    </a>
+                {% endfor %}
             </div>
         </section>
     </section>
@@ -57,35 +59,6 @@
             <div class="teste">
                 <i class="far fa-comments"></i>
             </div>
-            <!-- <header>
-                <img src="img/imgTeste.png">
-                <div class="details">
-                    <span>Samuel Mayer</span>
-                    <span class="status">status da pessoa</span>
-                </div>
-            </header>
-            <div class="chat-box">
-                <div class="chat outgoing">
-                    <div class="details">
-                        <p>Mensagem de teste Mensagem de teste Mensagem de teste Mensagem de teste Mensagem de teste</p>
-                    </div>
-                </div>
-                <div class="chat incoming">
-                    <div class="details">
-                        <p>Mensagem de teste</p>
-                    </div>
-                </div>
-                <div class="chat incoming">
-                    <div class="details">
-                        <p>Mensagem de teste</p>
-                    </div>
-                </div>
-            </div>
-            <form action="#" class="typing-area">
-                <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
-                <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
-                <button><i class="far fa-paper-plane"></i></button>
-            </form> -->
         </div>
     </section>
 

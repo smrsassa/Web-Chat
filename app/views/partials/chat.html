@@ -1,0 +1,21 @@
+<header>
+    <img src="img/imgTeste.png">
+    <div class="details">
+        <span>{{ userName }}</span>
+        <span class="status">{{ status }}</span>
+    </div>
+</header>
+<div class="chat-box">
+    {% for mensagem in mensagens %}
+        <div class="chat {{ mensagem.destino }}">
+            <div class="details">
+                <p>{{ mensagem.mensagem }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<form action="#" class="typing-area">
+    <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+    <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
+    <button><i class="far fa-paper-plane"></i></button>
+</form>
