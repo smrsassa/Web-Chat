@@ -3,6 +3,17 @@
 	display: flex;
 	flex-flow: column;
 }
+.chat-area .teste{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	background-color: #23272a;
+}
+.chat-area .teste i {
+	font-size: 10rem;
+}
 .chat-area header{  
 	flex: 0 1 auto;
   	display: flex;
